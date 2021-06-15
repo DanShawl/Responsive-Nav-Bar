@@ -1,0 +1,239 @@
+/* ----------------------- Google Fonts ------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+/* ----------------------- Variables ------------------------ */
+// $header-height: 3rem;
+$header-height: 3rem;
+
+$primary-color: #5b65f5;
+$primary-color-light: #c4c7f5;
+$secondary-color: #0e1026;
+$white-color: #fbfbfb;
+
+/* --------------------- Font and Typography ---------------------- */
+
+$body-font: 'Open Sans', sans-serif;
+// $body-font: 'Baloo Tammudu 2', cursive;
+$nav-name-font-size: 1.5rem;
+$normal-font-size: 0.938rem;
+
+/* --------------------- Z-Index ---------------------- */
+
+$z-fixed: 100;
+
+@media screen and (min-width: 768px) {
+  $nav-name-font-size: 1rem;
+  $normal-font-size: 1rem;
+}
+
+/* --------------------- Base ---------------------- */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: $header-height 0 0 0;
+  font-family: $body-font;
+  font-size: $normal-font-size;
+  font-weight: 600;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* --------------------- Header ---------------------- */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
+  padding: 0 1rem;
+  background-color: #fff;
+  z-index: $z-fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// .header-logo,
+// .header-toggle {
+//   margin-top: 1rem;
+// }
+
+.header-logo {
+  // margin-top: 0.5em;
+  color: $secondary-color;
+}
+
+.header-toggle {
+  // margin-top: 0.7em;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+/* --------------------- Header ---------------------- */
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: $primary-color;
+    width: 80%;
+    height: 100vh;
+    padding: 2rem 0;
+    z-index: $z-fixed;
+    transition: 0.5s;
+    overflow-y: auto;
+  }
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.nav-img {
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.nav-img img {
+  width: 70px;
+}
+
+.nav-name {
+  display: block;
+  font-size: $nav-name-font-size;
+  color: $white-color;
+}
+
+.nav-item {
+  margin-bottom: 1rem;
+}
+
+.nav-link {
+  color: $primary-color-light;
+}
+
+.nav-link:hover {
+  color: $white-color;
+}
+
+/* ----------------------- Show Menu ------------------------ */
+.show {
+  left: 0;
+}
+
+/* ----------------------- Active Link ------------------------ */
+.active {
+  color: $white-color;
+}
+
+/* ----------------------- Media Queries ------------------------ */
+@media screen and (min-width: 576px) {
+  .nav {
+    width: 288px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .header {
+    height: calc($header-height + 1rem);
+  }
+  .header-logo,
+  .header-toggle {
+    display: none;
+  }
+  .nav {
+    width: 100%;
+  }
+  .nav-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-perfil {
+    flex-direction: row;
+    text-align: initial;
+    margin-bottom: 0;
+  }
+  .nav-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5em;
+    margin-bottom: 0;
+  }
+
+  .nav-img img {
+    width: 46px;
+  }
+  .nav-name {
+    color: $secondary-color;
+  }
+  .nav-list {
+    display: flex;
+    align-items: center;
+  }
+  .nav-item {
+    margin: 0 1.5rem;
+  }
+  .nav-link {
+    color: $secondary-color;
+  }
+  .nav-link:hover {
+    color: $primary-color;
+  }
+  .active {
+    color: $primary-color;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav-item a {
+    font-size: 0.8rem;
+  }
+  .nav-content span {
+    margin-left: 0.5em;
+    font-size: 1rem;
+  }
+}
